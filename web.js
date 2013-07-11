@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-
 var express = require('express');
 var file = require('fs');
 var welcomemsg = new Buffer (64);
