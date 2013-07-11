@@ -8,7 +8,7 @@ var fs = require ('fs');
 var app = express.createServer(express.logger());
   
 app.get('/', function(request, response) {
-  welcomemsg = fs.readFileSync(index.html);
+  welcomemsg = fs.readFileSync('index.html');
   var welcome = welcomemsg.toString('utf8',0,welcomemsg.length);
   response.send(welcome);
 
