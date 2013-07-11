@@ -2,14 +2,14 @@
 
 var express = require('express');
 var file = require('fs');
-var welcomemsg = new Buffer (fs.readFileSync('index.html'),'utf-8');
+var welcomemsg = new Buffer (64);
 var fs = require ('fs');
 
 var app = express.createServer(express.logger());
   
 app.get('/', function(request, response) {
   welcomemsg = fs.readFileSync('index.html');
-  var welcome = welcomemsg.toString('utf8',0,welcomemsg.length);
+  var welcome = welcomemsg.toString('utf-8',0,welcomemsg.length);
   response.send(welcome);
 
 });
