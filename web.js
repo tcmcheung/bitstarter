@@ -1,15 +1,17 @@
-
+#!/usr/bin/env node
 
 
 var express = require('express');
 var file = require('fs');
-var filename = new Buffer (64);
+var welcomemsg = new Buffer (64);
 
 var app = express.createServer(express.logger());
-
+  
 app.get('/', function(request, response) {
-      
- response.send('Hello World from '+filename);
+  welcomemsg = fs.readFileSync(index.html);
+  var welcome = welcomemsg.toString('utf8',0,welcomemsg.length);
+  response.send(welcome);
+
 });
 
 var port = process.env.PORT || 5000;
