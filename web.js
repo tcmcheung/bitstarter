@@ -2,7 +2,7 @@
 
 var express = require('express');
 var file = require('fs');
-var welcomemsg = new Buffer (fs.readFileSync('index.html'));
+var welcomemsg = new Buffer (fs.readFileSync('index.html'),'utf-8');
 var fs = require ('fs');
 
 var app = express.createServer(express.logger());
